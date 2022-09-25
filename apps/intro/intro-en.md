@@ -3,7 +3,7 @@
 - [x] Fast Refresh (React)
 - [x] Routes by folders
     - [x] `[..id]` Dinamic routes
-- [ ] SPA: Single Page Application
+- [x] SPA: Single Page Application
 - [x] SSG: Static Site Generation
 - [x] CSR: Client Side Rendering
 - [x] SSR: Server Side Rendering
@@ -11,7 +11,7 @@
 
 ### Project to intro NextJs
 
-- [ ] Movie Listing
+- [x] Movie Listing
 - [ ] Search Movies (themoviedb.org)
 - [ ] movie delathe screen
 
@@ -24,7 +24,8 @@
 ### Dinamic routes
 - These are routes with dynamic parameters, NextJS recognizes these routes by filename [..id], [ id], [variable-name] and so on. These are pages where they receive values that change according to what the passed value or variable is looking for and this also implies the content of the page.
 
-### Single Page Application [wip]
+### Single Page Application
+- Single page applications load only one HTML page and every time the user requests new content it is dynamically added and processed by JavaScript through DOM manipulation
 
 ### Static Site Generation (Executes only 1x in the build)
 - It is a feature used for pages where the content is fixed, i.e. your page doesn't need to be rendered again because it doesn't have any changes, with SSG it renders the page only once at server start or build time and gives it to you already pre-built.
