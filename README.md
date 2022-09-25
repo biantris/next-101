@@ -3,7 +3,7 @@
 > 🌊 Deep dive NextJS 
 
 ## Contents
-- [intro](https://github.com/biantris/next-101/tree/main/apps/intro)
+- [Intro](https://github.com/biantris/next-101/tree/main/apps/intro)
 - [Intermediate]()
 - [Advanced]()
 
