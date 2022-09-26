@@ -1,42 +1,71 @@
+import {
+  Card,
+  CardActionArea,
+  CardContent,
+  CardMedia,
+  Chip,
+  Container,
+  Typography,
+} from "@material-ui/core";
 import Head from "next/head";
-import Image from "next/image";
+import { Flex } from "rebass";
 import styled from "styled-components";
 import { Button } from "ui";
-
-const ContentList = styled.div`
-`;
 
 type HomeProps = {
   list: Object[];
 };
 
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 15px;
+`;
+
 export default function Home({ list }: HomeProps) {
   return (
-    <>
+    <Container>
       <Head>
         <title>Intro NextJS</title>
       </Head>
-      <h1>Intro</h1>
-      <h2>Featured Movies</h2>
 
-      <ContentList>
+      <Flex
+        mt={"80px"}
+        mb={"40px"}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
+        <Flex mr={"10px"}>
+          <Chip label="Intro" variant="outlined" />
+        </Flex>
+        <Typography variant="h4">Featured Movies</Typography>
+      </Flex>
+
+      <Grid marginTop={"10px"}>
         {list.map((item) => (
-          <a href={`/movie${item.id}`}>
-            <>
-              <Image
-                src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
-                alt="Landscape picture"
-                width={150}
-                height={260}
+          <Card sx={{ maxWidth: 345 }}>
+            <CardActionArea href={`/movie${item.id}`}>
+              <CardMedia
+                component="img"
+                height="300"
+                image={`https://image.tmdb.org/t/p/original${item.poster_path}`}
+                alt="movie images"
               />
-              {item.title}
-            </>
-          </a>
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  {item.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {item.overview}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
         ))}
-      </ContentList>
+      </Grid>
 
       <Button />
-    </>
+    </Container>
   );
 }
 
