@@ -9,12 +9,6 @@
 - [x] SSR: Server Side Rendering
 - [ ] ISG / ISR - Incremental Static Generation/Regeneration
 
-### Project to intro NextJs
-
-- [x] Movie Listing
-- [ ] Search Movies (themoviedb.org)
-- [ ] movie delathe screen
-
 ### Fast Refresh
 It is the instant update of changes to React components and pages without having to reload the page in the browser. NextJS already has this configured by default.
 
