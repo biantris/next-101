@@ -5,8 +5,11 @@
 - [intro-en](./intro-en.md)
 - [intro-pt-br](intro-pt-br.md)
 
-### Project
-[wip]
+### Project to base NextJS
+
+- [x] Movie Listing
+- [ ] Search Movies (themoviedb.org)
+- [ ] movie delathe screen
 
 ### Getting Started
 ```sh
