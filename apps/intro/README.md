@@ -18,6 +18,9 @@
 - [x] movie detail screen **(SSR)**
 ![image](https://user-images.githubusercontent.com/65451957/192432812-dfa5472a-0399-4933-8f1b-9d1c0411c014.png)
 
+- [x] About page **(SSG)**
+![image](https://user-images.githubusercontent.com/65451957/192435859-2a454172-fddf-4656-9316-0bb0eb963ef9.png)
+
 
 ### Getting Started
 ```sh
