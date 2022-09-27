@@ -1,21 +1,15 @@
 import {
-  Button,
   Card,
   CardActionArea,
   CardContent,
   CardMedia,
-  Chip,
   Container,
   Typography,
 } from "@material-ui/core";
 import Head from "next/head";
-import Link from "next/link";
+import { useState } from "react";
 import { Flex } from "rebass";
 import styled from "styled-components";
-
-type HomeProps = {
-  list: Object[];
-};
 
 const Grid = styled.div`
   display: grid;
@@ -23,7 +17,21 @@ const Grid = styled.div`
   gap: 15px;
 `;
 
-export default function Home({ list }: HomeProps) {
+export default function Search() {
+  const [searchText, setSearchText] = useState("");
+  const [movieList, setMovieList] = useState([]);
+
+  const handleSearch = async () => {
+    if (searchText !== "") {
+      const result = await fetch(
+        `http://localhost:3000/api/search?q=${searchText}`
+      );
+      const json = await result.json();
+
+      setMovieList(json.list);
+    }
+  };
+
   return (
     <Container>
       <Head>
@@ -36,10 +44,20 @@ export default function Home({ list }: HomeProps) {
         justifyContent={"center"}
         alignItems={"center"}
       >
-        <Flex mr={"10px"}>
-          <Chip label="Intro" variant="outlined" />
-        </Flex>
-        <Typography variant="h4">Featured Movies</Typography>
+        <Typography variant="h4">Search</Typography>
+      </Flex>
+
+      <Flex
+        mt={"80px"}
+        mb={"40px"}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
+        <input
+          type="text"
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+        />
       </Flex>
 
       <Flex
@@ -48,13 +66,13 @@ export default function Home({ list }: HomeProps) {
         justifyContent={"center"}
         alignItems={"center"}
       >
-        <Button>
-          <Link href="/search">Go to search</Link>
-        </Button>
+        <button onClick={handleSearch}>Search</button>
       </Flex>
 
+      <hr />
+
       <Grid marginTop={"10px"}>
-        {list.map((item) => (
+        {movieList.map((item) => (
           <Card sx={{ maxWidth: 345 }}>
             <CardActionArea href={`/movie${item.id}`}>
               <CardMedia
@@ -75,23 +93,6 @@ export default function Home({ list }: HomeProps) {
           </Card>
         ))}
       </Grid>
-
-      <Button />
     </Container>
   );
-}
-
-export async function getServerSideProps() {
-  try {
-    const res = await fetch(`http://localhost:3000/api/trending`);
-    const json = await res.json();
-
-    return {
-      props: {
-        list: json.list,
-      },
-    };
-  } catch (error) {
-    console.log(error);
-  }
 }
