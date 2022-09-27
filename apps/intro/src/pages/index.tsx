@@ -76,7 +76,17 @@ export default function Home({ list }: HomeProps) {
         ))}
       </Grid>
 
-      <Button />
+      <Flex
+        mt={"10px"}
+        mb={"10px"}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
+        <Button>
+          <Link href="/about">About me</Link>
+        </Button>
+      </Flex>
+      
     </Container>
   );
 }
