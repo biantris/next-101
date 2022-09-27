@@ -56,7 +56,7 @@ export default function Home({ list }: HomeProps) {
       <Grid marginTop={"10px"}>
         {list.map((item) => (
           <Card sx={{ maxWidth: 345 }}>
-            <CardActionArea href={`/movie${item.id}`}>
+            <CardActionArea href={`/movie/${item.id}`}>
               <CardMedia
                 component="img"
                 height="300"
