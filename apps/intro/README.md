@@ -15,7 +15,9 @@
 - [x] Search Movies (themoviedb.org) **(CSR)**
 ![image](https://user-images.githubusercontent.com/65451957/192426483-9986c244-b619-4201-8ae8-6485896dabbd.png)
 
-- [ ] movie detail screen
+- [x] movie detail screen **(SSR)**
+![image](https://user-images.githubusercontent.com/65451957/192432812-dfa5472a-0399-4933-8f1b-9d1c0411c014.png)
+
 
 ### Getting Started
 ```sh
